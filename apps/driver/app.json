@@ -1,0 +1,61 @@
+{
+  "expo": {
+    "name": "ME Tournée",
+    "slug": "me-tournee",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "metournee",
+    "userInterfaceStyle": "light",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "fr.maisonesclaire.tournee"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#111c24"
+      },
+      "package": "fr.maisonesclaire.tournee"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png",
+      "name": "ME Tournée",
+      "shortName": "ME Tournée",
+      "lang": "fr",
+      "themeColor": "#111c24"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash.png",
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+        }
+      ],
+      "expo-status-bar",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "La position est enregistrée pendant la tournée uniquement."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "Pour photographier les BL signés, les problèmes et les retours."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
