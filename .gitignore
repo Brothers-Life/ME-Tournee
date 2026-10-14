@@ -6,3 +6,4 @@ dist
 web-build
 .turbo
 coverage
+dump.rdb
