@@ -19,5 +19,8 @@
   "dependencies": {
     "@me/shared": "workspace:*",
     "pdfjs-dist": "^6.4.299"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }
