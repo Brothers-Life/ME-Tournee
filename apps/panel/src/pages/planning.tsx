@@ -170,14 +170,23 @@ export function PlanningPage() {
         actions={
           canManage && (
             <>
-              <Button
-                variant="outline"
-                onClick={() => depotId && autoPlan.mutate({ depotId, date })}
-                disabled={autoPlan.isPending || !data?.unassigned.length}
+              {/* Un bouton désactivé n'affiche pas de bulle : l'explication est portée par le span. */}
+              <span
+                title={
+                  data?.unassigned.length
+                    ? "Range les BL « À répartir » dans la tournée de leur secteur"
+                    : "Aucun BL à répartir : à l'import, chaque BL est déjà placé dans la tournée de son secteur"
+                }
               >
-                {autoPlan.isPending ? <Loader2Icon className="animate-spin" /> : <SparklesIcon />}
-                Répartir automatiquement
-              </Button>
+                <Button
+                  variant="outline"
+                  onClick={() => depotId && autoPlan.mutate({ depotId, date })}
+                  disabled={autoPlan.isPending || !data?.unassigned.length}
+                >
+                  {autoPlan.isPending ? <Loader2Icon className="animate-spin" /> : <SparklesIcon />}
+                  Répartir automatiquement
+                </Button>
+              </span>
               <Button onClick={() => setCreating(true)}>
                 <PlusIcon /> Nouvelle tournée
               </Button>
